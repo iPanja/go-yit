@@ -1,6 +1,8 @@
 package yit
 
-import "gopkg.in/yaml.v3"
+import (
+	"gopkg.in/yaml.v3"
+)
 
 type (
 	Iterator  func() (*yaml.Node, bool)
@@ -81,6 +83,9 @@ func (next Iterator) MapValues() Iterator {
 		for {
 			if len(content) > 0 {
 				node = content[1]
+				if node.Kind == yaml.AliasNode {
+					node = node.Alias.Content[1]
+				}
 				content = content[2:]
 				ok = true
 				return
@@ -151,6 +156,10 @@ func (next Iterator) RecurseNodes() Iterator {
 		// iterate backwards so the iteration
 		// is predictable (for testing)
 		for i := len(node.Content) - 1; i >= 0; i-- {
+			nn := node.Content[i]
+			if nn.Alias != nil {
+				stack = append(stack, nn.Alias)
+			}
 			stack = append(stack, node.Content[i])
 		}
 
