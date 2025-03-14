@@ -144,8 +144,17 @@ func (next Iterator) RecurseNodes() Iterator {
 	return func() (node *yaml.Node, ok bool) {
 		if len(stack) > 0 {
 			node = stack[len(stack)-1]
-			stack = stack[:len(stack)-1]
-			ok = true
+
+			if node.Tag == "!!merge" {
+				node = stack[len(stack)-2]
+				node = node.Alias.Content[0]
+				stack = stack[:len(stack)-3]
+				ok = true
+			} else {
+				node = stack[len(stack)-1]
+				stack = stack[:len(stack)-1]
+				ok = true
+			}
 		} else {
 			node, ok = next()
 			if !ok {
@@ -158,8 +167,10 @@ func (next Iterator) RecurseNodes() Iterator {
 		for i := len(node.Content) - 1; i >= 0; i-- {
 			nn := node.Content[i]
 			if nn.Alias != nil {
+				//print("lemme breakpoint")
 				stack = append(stack, nn.Alias)
 			}
+			//fmt.Printf("\n[`%s`, `%s`, ? %+v]\n", node.Content[i].Value, node.Content[i].Tag, node.Content[i].Alias != nil)
 			stack = append(stack, node.Content[i])
 		}
 
