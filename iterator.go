@@ -83,11 +83,14 @@ func (next Iterator) MapValues() Iterator {
 		for {
 			if len(content) > 0 {
 				node = content[1]
-				if node.Kind == yaml.AliasNode {
-					node = node.Alias.Content[1]
-				}
 				content = content[2:]
 				ok = true
+				if node.Kind == yaml.AliasNode {
+					if len(node.Alias.Content) == 0 {
+						return
+					}
+					node = node.Alias.Content[0]
+				}
 				return
 			}
 
