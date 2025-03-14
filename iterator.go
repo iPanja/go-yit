@@ -85,12 +85,6 @@ func (next Iterator) MapValues() Iterator {
 				node = content[1]
 				content = content[2:]
 				ok = true
-				if node.Kind == yaml.AliasNode {
-					if len(node.Alias.Content) == 0 {
-						return
-					}
-					node = node.Alias.Content[0]
-				}
 				return
 			}
 
@@ -141,39 +135,47 @@ func (next Iterator) ValuesForMap(keyPredicate, valuePredicate Predicate) Iterat
 	}
 }
 
+func RealNode(node *yaml.Node) *yaml.Node {
+	if node == nil {
+		return nil
+	}
+
+	if node.Kind == yaml.AliasNode {
+		return RealNode(node.Alias)
+	}
+	return node
+}
+
 func (next Iterator) RecurseNodes() Iterator {
 	var stack []*yaml.Node
 
 	return func() (node *yaml.Node, ok bool) {
 		if len(stack) > 0 {
 			node = stack[len(stack)-1]
-
-			if node.Tag == "!!merge" {
-				node = stack[len(stack)-2]
-				node = node.Alias.Content[0]
-				stack = stack[:len(stack)-3]
-				ok = true
-			} else {
-				node = stack[len(stack)-1]
-				stack = stack[:len(stack)-1]
-				ok = true
-			}
+			stack = stack[:len(stack)-1]
+			ok = true
 		} else {
+			print("DONE\n")
 			node, ok = next()
 			if !ok {
 				return
 			}
 		}
 
+		if node.Tag == "!!merge" {
+			print("MERGE\n")
+			//nn := stack[len(stack)-1]
+			//node.Value = nn.Alias.Content[0].Content[0].Value
+			//nn = nn.Alias.Content[0].Content[1]
+			//
+			//node.Content = nn.Alias.Content[0].Content[2:]
+			//
+			//print("IP")
+		}
+
 		// iterate backwards so the iteration
 		// is predictable (for testing)
 		for i := len(node.Content) - 1; i >= 0; i-- {
-			nn := node.Content[i]
-			if nn.Alias != nil {
-				//print("lemme breakpoint")
-				stack = append(stack, nn.Alias)
-			}
-			//fmt.Printf("\n[`%s`, `%s`, ? %+v]\n", node.Content[i].Value, node.Content[i].Tag, node.Content[i].Alias != nil)
 			stack = append(stack, node.Content[i])
 		}
 
@@ -198,6 +200,7 @@ func (next Iterator) Values() Iterator {
 	return func() (node *yaml.Node, ok bool) {
 		if len(content) > 0 {
 			node = content[0]
+
 			content = content[1:]
 			ok = true
 			return

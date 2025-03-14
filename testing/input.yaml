@@ -1,0 +1,12 @@
+# TEST 1
+#document:
+#  var: &var test
+#  envs:
+#    - name: *var
+#      e: f
+# TEST 2
+var: &aa test
+dumb: &blockz
+  - something
+envs:
+  <<: *blockz
