@@ -1,6 +1,8 @@
 package yit
 
-import "gopkg.in/yaml.v3"
+import (
+	"gopkg.in/yaml.v3"
+)
 
 type (
 	Iterator  func() (*yaml.Node, bool)
@@ -13,6 +15,8 @@ func FromNode(node *yaml.Node) Iterator {
 
 func FromNodes(nodes ...*yaml.Node) Iterator {
 	i := 0
+	var merge []*yaml.Node
+	mergeIndex := -1 // -1 or out of bounds of len(merge) indicates we are NOT in a merge block
 
 	return func() (node *yaml.Node, ok bool) {
 		ok = i < len(nodes)
@@ -21,7 +25,32 @@ func FromNodes(nodes ...*yaml.Node) Iterator {
 		}
 
 		node = nodes[i]
-		i++
+		if node.Tag == "!!merge" {
+			// Obtain the contents of the merge value (the alias)
+			merge = make([]*yaml.Node, 0, len(nodes[i+1].Alias.Content))
+			mergeIndex = 0
+
+			addContents(nodes[i+1].Alias, &merge)
+
+			// slices.Reverse(merge) - Not supported in this golang version
+			// addContents reverses the order, undo that
+			for i, j := 0, len(merge)-1; i < j; i, j = i+1, j-1 {
+				merge[i], merge[j] = merge[j], merge[i]
+			}
+
+			i += 2 // Skip over merge tag for when we later exit
+		} else if node.Kind == yaml.AliasNode && (mergeIndex >= len(merge) || mergeIndex < 0) {
+			node = node.Alias
+		}
+
+		// Hijack node selection if we are "in" a merge block
+		if mergeIndex != -1 && mergeIndex < len(merge) {
+			// We are within a merge's to be contents
+			node = merge[mergeIndex]
+			mergeIndex++
+		} else {
+			i++
+		}
 
 		return
 	}

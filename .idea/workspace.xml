@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f231c18-f878-48a0-9cb0-e4f020a02c6d" name="Changes" comment="Merge keys ...">
-      <change afterPath="$PROJECT_DIR$/testing/alias_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testing/merge_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/iterator.go" beforeDir="false" afterPath="$PROJECT_DIR$/iterator.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/alias_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/testing/alias_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/merge_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/testing/merge_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +37,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultGoTemplateProperty": "Go File",
+    "Go Test.alias_test.go (1).executor": "Debug",
     "Go Test.alias_test.go.executor": "Run",
+    "Go Test.merge_test.go (1).executor": "Run",
     "Go Test.merge_test.go.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.GoLinterPluginOnboarding": "true",
@@ -60,7 +63,7 @@
       <recent name="E:\Fletcher\Documents\GitHub\go-yit\testing" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.merge_test.go">
+  <component name="RunManager" selected="Go Test.merge_test.go (1)">
     <configuration name="go build alias_testing.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-yit" />
       <working_directory value="$PROJECT_DIR$" />
@@ -70,13 +73,14 @@
       <filePath value="$PROJECT_DIR$/testing/alias_testing.go" />
       <method v="2" />
     </configuration>
-    <configuration name="go build testing.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="alias_test.go (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-yit" />
-      <working_directory value="$PROJECT_DIR$" />
+      <working_directory value="$PROJECT_DIR$/testing" />
+      <root_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
-      <package value="github.com/dprotaso/go-yit" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/testing/testing.go" />
+      <filePath value="$PROJECT_DIR$/testing/alias_test.go" />
+      <framework value="gotest" />
       <method v="2" />
     </configuration>
     <configuration name="alias_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -86,6 +90,16 @@
       <kind value="FILE" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/testing/alias_test.go" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
+    <configuration name="merge_test.go (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-yit" />
+      <working_directory value="$PROJECT_DIR$/testing" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/testing/merge_test.go" />
       <framework value="gotest" />
       <method v="2" />
     </configuration>
@@ -101,10 +115,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.merge_test.go (1)" />
+        <item itemvalue="Go Test.alias_test.go (1)" />
         <item itemvalue="Go Test.merge_test.go" />
         <item itemvalue="Go Test.alias_test.go" />
         <item itemvalue="Go Build.go build alias_testing.go" />
-        <item itemvalue="Go Build.go build testing.go" />
       </list>
     </recent_temporary>
   </component>
@@ -154,23 +169,23 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/iterator.go</url>
-          <line>17</line>
-          <option name="timeStamp" value="44" />
+          <line>204</line>
+          <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/iterator.go</url>
-          <line>160</line>
-          <option name="timeStamp" value="46" />
+          <line>42</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/testing/alias_test.go</url>
+          <line>31</line>
+          <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/iterator.go</url>
-          <line>173</line>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/iterator.go</url>
-          <line>183</line>
-          <option name="timeStamp" value="49" />
+          <line>36</line>
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -186,6 +201,8 @@
         <watch expression="*(*&quot;[]*gopkg.in/yaml%2ev3.Node&quot;)(824634819136)" />
         <watch expression="*(*&quot;[]*gopkg.in/yaml%2ev3.Node&quot;)(824634819136)" />
         <watch expression="*(*&quot;[]*gopkg.in/yaml%2ev3.Node&quot;)(824634819136)" />
+        <watch expression="*(*&quot;gopkg.in/yaml%2ev3.Node&quot;)(824634789792)" />
+        <watch expression="*(*&quot;[]*gopkg.in/yaml%2ev3.Node&quot;)(824635325640)" />
       </configuration>
     </watches-manager>
   </component>
