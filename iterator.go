@@ -138,24 +138,54 @@ func (next Iterator) RecurseNodes() Iterator {
 
 	return func() (node *yaml.Node, ok bool) {
 		if len(stack) > 0 {
+			// Grab node from stack
 			node = stack[len(stack)-1]
 			stack = stack[:len(stack)-1]
 			ok = true
 		} else {
+			// We have exhausted the stack, go to the next node in the level
+			// This is accessible since we called FromNode() beforehand
 			node, ok = next()
 			if !ok {
 				return
 			}
 		}
 
+		if node.Kind == yaml.AliasNode {
+			node = node.Alias
+		}
+
 		// iterate backwards so the iteration
 		// is predictable (for testing)
-		for i := len(node.Content) - 1; i >= 0; i-- {
-			stack = append(stack, node.Content[i])
-		}
+		// (we are using a stack)
+		addContents(node, &stack)
 
 		return
 	}
+}
+
+func addContents(node *yaml.Node, stack *[]*yaml.Node) {
+	for i := len(node.Content) - 1; i >= 0; i-- {
+		n := node.Content[i]
+		handled := false
+
+		// Alias found, check if next node is a merge key
+		if i%2 == 1 && n.Alias != nil {
+			nKey := node.Content[i-1]
+			if nKey.Tag == "!!merge" {
+				// Embed alias' contents
+				addContents(n.Alias, stack)
+				i -= 1
+				handled = true
+			}
+		}
+
+		if !handled {
+			*stack = append(*stack, node.Content[i])
+		}
+	}
+
+	return
 }
 
 func (next Iterator) Filter(p Predicate) Iterator {

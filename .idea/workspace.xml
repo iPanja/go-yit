@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5f231c18-f878-48a0-9cb0-e4f020a02c6d" name="Changes" comment="Merge keys ...">
+      <change afterPath="$PROJECT_DIR$/testing/alias_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing/merge_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iterator.go" beforeDir="false" afterPath="$PROJECT_DIR$/iterator.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" url="file://C:/Program Files/Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2uHWzURDxZFhcVwHMejzPvWRfoA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "Go Test.alias_test.go.executor": "Run",
+    "Go Test.merge_test.go.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.GoLinterPluginOnboarding": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "git-widget-placeholder": "dev",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "E:/Fletcher/Documents/GitHub/go-yit/testing",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Fletcher\Documents\GitHub\go-yit\testing" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go Test.merge_test.go">
+    <configuration name="go build alias_testing.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="go-yit" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="github.com/dprotaso/go-yit" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/testing/alias_testing.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build testing.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="go-yit" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="github.com/dprotaso/go-yit" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/testing/testing.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="alias_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-yit" />
+      <working_directory value="$PROJECT_DIR$/testing" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/testing/alias_test.go" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
+    <configuration name="merge_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-yit" />
+      <working_directory value="$PROJECT_DIR$/testing" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/testing/merge_test.go" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Test.merge_test.go" />
+        <item itemvalue="Go Test.alias_test.go" />
+        <item itemvalue="Go Build.go build alias_testing.go" />
+        <item itemvalue="Go Build.go build testing.go" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-gosdk-3b128438d3f6-34ac7aa8f6ab-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-251.23774.41" />
+        <option value="bundled-js-predefined-d6986cc7102b-d159365566ee-JavaScript-GO-251.23774.41" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5f231c18-f878-48a0-9cb0-e4f020a02c6d" name="Changes" comment="" />
+      <created>1741906242102</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1741906242102</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Handle aliasing" />
+    <MESSAGE value="Merge keys" />
+    <MESSAGE value="Merge keys ..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge keys ..." />
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/iterator.go</url>
+          <line>17</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/iterator.go</url>
+          <line>160</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/iterator.go</url>
+          <line>173</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/iterator.go</url>
+          <line>183</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="GoTestRunConfiguration">
+        <watch expression="*(*&quot;[]*gopkg.in/yaml%2ev3.Node&quot;)(824634779584)" />
+        <watch expression="*(*&quot;gopkg.in/yaml%2ev3.Node&quot;)(824634426784)" />
+        <watch expression="*(*&quot;gopkg.in/yaml%2ev3.Node&quot;)(0)" />
+        <watch expression="*(*&quot;gopkg.in/yaml%2ev3.Node&quot;)(824634788832)" />
+        <watch expression="*(*&quot;string&quot;)(824634788200)" />
+        <watch expression="*(*&quot;[]*gopkg.in/yaml%2ev3.Node&quot;)(824634780544)" />
+        <watch expression="*(*&quot;[]*gopkg.in/yaml%2ev3.Node&quot;)(824633754248)" />
+        <watch expression="*(*&quot;[]*gopkg.in/yaml%2ev3.Node&quot;)(824634819136)" />
+        <watch expression="*(*&quot;[]*gopkg.in/yaml%2ev3.Node&quot;)(824634819136)" />
+        <watch expression="*(*&quot;[]*gopkg.in/yaml%2ev3.Node&quot;)(824634819136)" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
