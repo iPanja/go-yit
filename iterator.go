@@ -187,7 +187,7 @@ func (next Iterator) RecurseNodes() Iterator {
 		// iterate backwards so the iteration
 		// is predictable (for testing)
 		// (we are using a stack)
-		addContents(node, &stack)
+		addContents(node, &stack) // May not be needed since we have merge support in FromNodes() now
 
 		return
 	}
@@ -198,7 +198,7 @@ func addContents(node *yaml.Node, stack *[]*yaml.Node) {
 		n := node.Content[i]
 		handled := false
 
-		// Alias found, check if next node is a merge key
+		// Alias found, check if key node (in the pair) is a merge key
 		if i%2 == 1 && n.Alias != nil {
 			nKey := node.Content[i-1]
 			if nKey.Tag == "!!merge" {

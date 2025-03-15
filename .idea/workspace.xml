@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f231c18-f878-48a0-9cb0-e4f020a02c6d" name="Changes" comment="Merge keys ...">
+    <list default="true" id="5f231c18-f878-48a0-9cb0-e4f020a02c6d" name="Changes" comment="Potential merge block support">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/iterator.go" beforeDir="false" afterPath="$PROJECT_DIR$/iterator.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing/alias_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/testing/alias_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testing/merge_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/testing/merge_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +38,7 @@
     "DefaultGoTemplateProperty": "Go File",
     "Go Test.alias_test.go (1).executor": "Debug",
     "Go Test.alias_test.go.executor": "Run",
-    "Go Test.merge_test.go (1).executor": "Run",
+    "Go Test.merge_test.go (1).executor": "Debug",
     "Go Test.merge_test.go.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.GoLinterPluginOnboarding": "true",
@@ -159,7 +158,8 @@
     <MESSAGE value="Handle aliasing" />
     <MESSAGE value="Merge keys" />
     <MESSAGE value="Merge keys ..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge keys ..." />
+    <MESSAGE value="Potential merge block support" />
+    <option name="LAST_COMMIT_MESSAGE" value="Potential merge block support" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
@@ -169,23 +169,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/iterator.go</url>
-          <line>204</line>
+          <line>205</line>
           <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/iterator.go</url>
-          <line>42</line>
-          <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/testing/alias_test.go</url>
           <line>31</line>
           <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/iterator.go</url>
-          <line>36</line>
-          <option name="timeStamp" value="55" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
